@@ -13,7 +13,19 @@
           <div class="nav-item mt-2 ml-5">
                 ようこそ <%= current_customer.last_name %> さん
           </div>
-        <% end  %>
+        <ul class="navbar-nav ml-auto">
+          <% if customer_signed_in? %>
+            <li class="nav-item"><%= link_to "マイページ", customer_path(current_customer.id), class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
+            <li class="nav-item"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
+          <% elsif current_admin %>
+            <li class="nav-item"><%= link_to "会員一覧", admin_customers_path, class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
+            <li class="nav-item"><%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete, class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
+          <% else %>
+            <li class="nav-item"><%= link_to "概要", about_path,class: 'btn btn-outline-secondary mx-3 my-1' %></li>
+            <li class="nav-item"><%= link_to "新規登録", new_customer_registration_path, class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
+            <li class="nav-item"><%= link_to "会員ログイン", new_customer_session_path, class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
+            <li class="nav-item"><%= link_to "管理者用", new_admin_session_path, class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
+          <% end %>
        </div>
     </div>
   </nav>
