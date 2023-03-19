@@ -56,3 +56,16 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'bcrypt'
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
+gem 'dotenv-rails'
+gem 'kaminari'
+gem 'dotenv-rails'
+gem 'gmaps4rails'
+gem 'geocoder'
+gem "gon"
+gem 'haml-rails'
