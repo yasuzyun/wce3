@@ -64,8 +64,3 @@ gem 'net-imap'
 gem 'net-pop'
 gem 'dotenv-rails'
 gem 'kaminari'
-gem 'dotenv-rails'
-gem 'gmaps4rails'
-gem 'geocoder'
-gem "gon"
-gem 'haml-rails'
